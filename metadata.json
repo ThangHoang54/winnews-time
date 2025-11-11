@@ -1,0 +1,7 @@
+{
+  "name": "The WinNews Time",
+  "description": "A modern smart newspaper agent web page, styled like a classic physical newspaper. It fetches the latest news, supports English and French, and features a light/dark mode toggle for a comfortable reading experience.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
