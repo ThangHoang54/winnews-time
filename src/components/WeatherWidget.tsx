@@ -63,12 +63,12 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ language }) => {
     );
   }
 
-  const temperature = Math.round(weather.main.temp);
-  const cityName = weather.name;
-  const description =
-    language === 'fr'
-      ? weather.weather[0].description // already localized if API supports lang=fr
-      : weather.weather[0].description;
+  // const temperature = Math.round(weather.main.temp);
+  // const cityName = weather.name;
+  // const description =
+  //   language === 'fr'
+  //     ? weather.weather[0].description // already localized if API supports lang=fr
+  //     : weather.weather[0].description;
 
   return (
     <div className="flex items-center gap-2">
