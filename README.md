@@ -62,6 +62,7 @@ Follow these instructions to get a local copy up and running for development and
     ```sh
     npm install
     npm install react-router-dom@6
+    npm install -D @vercel/node
     ```
 
 3.  **Set up Environment Variables:**
@@ -79,7 +80,7 @@ Follow these instructions to get a local copy up and running for development and
     ```sh
     npm run dev
     ```
-    The application should now be running on your local development server, typically `http://localhost:3000`.
+    The application should now be running on your local development server, typically `http://localhost:8080`.
 
 ## 📂 Project Structure
 
@@ -87,8 +88,13 @@ The codebase is organized to be clean, scalable, and easy to navigate.
 
 ```
 /
+├── api/                  # Server-side functions
+│   ├── headlines.ts
+│   └── search.ts
+|   └── weather.ts
 ├── public/
 ├── src/
+|   ├── app/       
 │   ├── components/       # Reusable React components 
 │   │   └── icons/        # SVG Icon components
 │   ├── hooks/            # Custom React hooks
