@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { fetchNewsFromApi } from './lib/newsApiHelper';
+import { fetchNewsFromApi } from './lib/newsApiHelper.js';
 import type { NewsApiResponse } from '../src/types'; 
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
