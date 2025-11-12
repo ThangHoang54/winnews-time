@@ -113,7 +113,7 @@ const MyReactions: React.FC = () => {
   return (
     <div className="flex flex-col gap-8">
       <h1 className="text-4xl font-serif font-bold border-b border-ink/20 pb-4">
-        {language === 'en' ? 'Your Reactions' : 'Votre Réactions'}
+        {language === 'en' ? 'My Reactions' : 'Mes Réactions'}
       </h1>
 
       <div className="space-y-4">
