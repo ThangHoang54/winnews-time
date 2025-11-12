@@ -2,7 +2,6 @@ import type { NewsApiResponse, Category } from "../types";
 
 // This is your OWN backend, not NewsAPI
 const API_BASE_URL = "/api";
-// const API_KEYS_STRING = import.meta.env.VITE_NEWS_API_KEY;
 
 // Define allowed languages
 export type Language = "en" | "fr";

@@ -79,6 +79,8 @@ Follow these instructions to get a local copy up and running for development and
 4.  **Run the Development Server:**
     ```sh
     npm run dev
+    # or
+    versel dev 
     ```
     The application should now be running on your local development server, typically `http://localhost:8080`.
 

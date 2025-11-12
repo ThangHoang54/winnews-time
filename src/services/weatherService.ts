@@ -2,7 +2,6 @@ import type { WeatherApiResponse } from '../types';
 
 // This is your OWN backend, not OpenWeather
 const API_BASE_URL = '/api'; 
-// const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY
 
 export const getCurrentWeather = async (lat: number, lon: number, lang: 'en' | 'fr'): Promise<WeatherApiResponse> => {
   const queryParams = new URLSearchParams({

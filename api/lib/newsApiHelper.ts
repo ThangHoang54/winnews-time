@@ -1,5 +1,3 @@
-import type { NewsApiResponse } from "../../src/types";
-
 // Get keys securely from server environment variables
 const API_KEYS_STRING = process.env.NEWS_API_KEY; 
 

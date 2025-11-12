@@ -1,4 +1,3 @@
-// UPDATED FILE: api/weather.ts
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';

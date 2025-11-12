@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import { fetchNewsFromApi } from './lib/newsApiHelper';
-import type { NewsApiResponse, Category } from '../src/types';
+import type { NewsApiResponse } from '../src/types';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
@@ -19,6 +19,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(200).json(data);
 
   } catch (error) {
-    res.status(500).json({ message: error });
+    // Ensure we send a real string message
+    const message = (error instanceof Error) ? error.message : "An unknown error occurred";
+    res.status(500).json({ message });
   }
 }
