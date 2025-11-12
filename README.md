@@ -61,6 +61,7 @@ Follow these instructions to get a local copy up and running for development and
 2.  **Install dependencies:**
     ```sh
     npm install
+    npm install react-router-dom@6
     ```
 
 3.  **Set up Environment Variables:**

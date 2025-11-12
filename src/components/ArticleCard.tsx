@@ -11,7 +11,7 @@ interface ArticleCardProps {
   isSaved: boolean;
   isRead: boolean;
   reactions: Record<string, number>;
-  onReact: (articleUrl: string, emoji: string) => void;
+  onReact: (article: Article, emoji: string) => void;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article, onReadMore, isMain = false, onSaveToggle, isSaved, isRead, reactions, onReact }) => {
@@ -53,12 +53,12 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, onReadMore, isMain =
           />
         </div>
       )}
-      <div className="flex-grow flex flex-col">
+      <div className="grow flex flex-col">
         <p className="text-xs uppercase font-semibold text-accent dark:text-dark-accent mb-1">{source.name}</p>
         <h2 className={`font-serif font-bold group-hover:text-accent dark:group-hover:text-dark-accent transition-colors ${isMain ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
           {title}
         </h2>
-        <p className={`mt-2 flex-grow text-ink/80 dark:text-dark-ink/80 ${isMain ? 'text-base' : 'text-sm'}`}>
+        <p className={`mt-2 grow text-ink/80 dark:text-dark-ink/80 ${isMain ? 'text-base' : 'text-sm'}`}>
           {description}
         </p>
         <div className="mt-4 pt-4 border-t border-ink/10 dark:border-dark-ink/10">
@@ -66,7 +66,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, onReadMore, isMain =
             <span>{author || 'Unknown Author'}</span> &bull; <span>{formattedDate}</span>
           </div>
            <ReactionBar
-            articleUrl={article.url}
+            article={article}
             reactions={reactions}
             onReact={onReact}
           />
