@@ -141,6 +141,7 @@ const Layout: React.FC = () => {
         toggleTheme={toggleTheme}
         language={language}
         setLanguage={setLanguage}
+        savedArticleCount={savedArticles.length}
       />
       <main className="container mx-auto px-4 py-8">
         {/* The  page will be rendered here */}
