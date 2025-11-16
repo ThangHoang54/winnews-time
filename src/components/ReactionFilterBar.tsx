@@ -23,7 +23,7 @@ const ReactionFilterBar: React.FC<ReactionFilterBarProps> = ({
   language,
 }) => {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 p-4 bg-stone-100 dark:bg-gray-800 rounded-lg border border-ink/10 dark:border-dark-ink/10">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 p-4 bg-stone-100 dark:bg-dark-paper rounded-lg border border-ink/10 dark:border-dark-ink/10">
       
       {/* Label */}
       <p className="text-sm font-semibold mb-3 sm:mb-0 sm:pr-2 flex-shrink-0">

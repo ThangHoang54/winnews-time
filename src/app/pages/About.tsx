@@ -78,7 +78,6 @@ const translations = {
 };
 
 // --- Tech Pill Component ---
-
 const TechPill: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <span className="inline-block bg-accent/10 dark:bg-dark-accent/10 text-accent dark:text-dark-accent font-medium px-3 py-1 rounded-full text-sm">
     {children}
@@ -86,7 +85,6 @@ const TechPill: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 );
 
 // --- About Page Component ---
-
 const About: React.FC = () => {
   const { language } = useOutletContext<AppContextType>();
 
@@ -110,7 +108,7 @@ const About: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 space-y-16">
-      {/* 1. Hero Section */}
+      {/* Hero Section */}
       <section className="text-center">
         <h1 className="font-serif font-bold text-4xl md:text-5xl text-ink dark:text-dark-ink mb-4">
           {translations.heroTitle[language]}
@@ -120,7 +118,7 @@ const About: React.FC = () => {
         </p>
       </section>
 
-      {/* 2. Features ("Our Philosophy") */}
+      {/* Features ("Our Philosophy") */}
       <section>
         <h2 className="font-serif font-bold text-3xl text-center text-ink dark:text-dark-ink mb-10">
           {translations.featuresTitle[language]}
@@ -143,7 +141,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. From the Developer */}
+      {/* From the Developer */}
       <section className="bg-stone-100 dark:bg-gray-800 p-8 rounded-lg shadow-sm border border-ink/10 dark:border-dark-ink/10">
         <h2 className="font-serif font-bold text-3xl text-ink dark:text-dark-ink mb-4">
           {translations.devTitle[language]}

@@ -19,7 +19,8 @@ const App: React.FC = () => {
       
       {/* Suspense provides a fallback UI while the lazy-loaded component is fetched */}
       <Suspense fallback={
-        <div className="min-h-screen bg-paper dark:bg-dark-paper">
+        <div className="min-h-screen bg-paper dark:bg-dark-paper flex items-center justify-center">
+          <p className="text-lg text-ink dark:text-dark-ink">Loading...</p>
         </div>
       }></Suspense>
       <Routes>

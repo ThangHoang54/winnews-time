@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: 17 17 17;               /* #111111 */
+  --paper: 255 255 255;          /* #ffffff */
+  --accent: 185 28 28;           /* #b91c1c */
+
+  --dark-ink: 229 231 235;       /* #e5e7eb */
+  --dark-paper: 31 41 55;        /* #1f2937 */
+  --dark-accent: 245 158 11;     /* #f59e0b */
+}
+
+.dark {
+  --ink: var(--dark-ink);
+  --paper: var(--dark-paper);
+  --accent: var(--dark-accent);
+}

@@ -151,7 +151,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, language, setLangua
               
               {isMenuOpen && (
                 <div 
-                  className="absolute top-full right-0 mt-2 w-56 p-2 bg-paper dark:bg-dark-paper shadow-xl rounded-lg border border-ink/10 dark:border-dark-ink/20 z-30"
+                  className="absolute top-full right-0 mt-2 w-56 p-2 bg--paper dark:bg-dark-paper shadow-xl rounded-lg border border-ink/10 dark:border-dark-ink/20 z-30"
                 >
                   <div className="grid grid-cols-3 gap-2">
                     {menuItems.map((item) => {

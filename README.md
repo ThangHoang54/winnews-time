@@ -10,7 +10,6 @@ Welcome to The WinNews Time, a modern digital newspaper experience with a nostal
 ## ✨ Features
 
 - **Classic Newspaper Aesthetic**: Meticulously styled with serif fonts (`Merriweather`), a clean layout, and a 60/30/10 color scheme to evoke the feeling of reading a physical newspaper.
-- **Offline-First Experience**: Powered by a service worker, the app caches articles and assets, allowing you to read the news even when you're offline. Loads are instant on subsequent visits.
 - **Live Weather Widget**: A beautifully integrated weather widget in the header provides current weather conditions for your location using the OpenWeatherMap API.
 - **Interactive Reactions**: Engage with articles by leaving an emoji reaction. See what others think at a glance.
 - **Dynamic News Content**: Fetches real-time news from the **News API**, providing up-to-date top headlines and searchable articles.
@@ -72,8 +71,8 @@ Follow these instructions to get a local copy up and running for development and
 
     The application expects the API keys to be available as environment variables. For local development, you can create a `.env.local` file in the root of your project and add your keys:
     ```
-    VITE_NEWS_API_KEY="YOUR_NEWS_API_KEY"
-    VITE_OPENWEATHER_API_KEY="YOUR_OPENWEATHERMAP_API_KEY"
+    VITE_NEWS_API_KEY=YOUR_NEWS_API_KEY
+    VITE_OPENWEATHER_API_KEY=YOUR_OPENWEATHERMAP_API_KEY
     ```
 5.  **Run the Development Server:**
     ```sh

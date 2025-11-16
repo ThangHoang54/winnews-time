@@ -9,33 +9,25 @@ interface WeatherWidgetProps {
 const WeatherWidget: React.FC<WeatherWidgetProps> = ({ language }) => {
   const [weather, setWeather] = useState<WeatherApiResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [coords, setCoords] = useState<{ lat: number; lon: number } | null>(null);
 
+  // Get user's location once on mount
   useEffect(() => {
     if (!navigator.geolocation) {
       setError(
         language === 'fr'
-          ? 'La géolocalisation n’est pas prise en charge par votre navigateur.'
-          : 'Geolocation is not supported by your browser.'
+          ? 'La géolocalisation n’est pas prise en charge.'
+          : 'Geolocation is not supported.'
       );
       return;
     }
 
     navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        try {
-          const data = await getCurrentWeather(
-            position.coords.latitude,
-            position.coords.longitude,
-            language // Pass language to API
-          );
-          setWeather(data);
-        } catch (err) {
-          setError(
-            language === 'fr'
-              ? 'Échec du chargement de la météo.'
-              : 'Failed to fetch weather.'
-          );
-        }
+      (position) => {
+        setCoords({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+        });
       },
       () => {
         setError(
@@ -45,7 +37,28 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ language }) => {
         );
       }
     );
-  }, [language]);
+  }, []); 
+
+  // Fetch weather ONLY when we have coordinates or language changes
+  useEffect(() => {
+    if (!coords) return; // Don't fetch if we don't have coordinates
+
+    const fetchWeather = async () => {
+      try {
+        const data = await getCurrentWeather(coords.lat, coords.lon, language);
+        setWeather(data);
+        setError(null); // Clear previous errors
+      } catch (err) {
+        setError(
+          language === 'fr'
+            ? 'Échec du chargement de la météo.'
+            : 'Failed to fetch weather.'
+        );
+      }
+    };
+
+    fetchWeather();
+  }, [coords, language]); // <-- This now correctly depends on coords and language
 
   if (error) {
     return (

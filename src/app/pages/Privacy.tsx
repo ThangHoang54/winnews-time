@@ -1,18 +1,7 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import type { AppContextType } from '../Layout';
-import {
-  Archive,
-  Eye,
-  Heart,
-  Palette,
-  ShieldOff,
-  Server,
-  UserSquare,
-  Sun,
-  Trash2,
-  FileText,
-} from 'lucide-react';
+import { Archive, Eye, Heart, Palette, ShieldOff, Server, UserSquare, Sun,Trash2, FileText } from 'lucide-react';
 
 // Translations
 const translations = {

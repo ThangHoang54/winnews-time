@@ -85,9 +85,11 @@ const Layout: React.FC = () => {
       const currentArticleReactions = newReactions[articleUrl];
       const isAlreadyReacted = (currentArticleReactions[emoji] || 0) > 0;
 
+      let newReactionsForArticle: Record<string, number>;
+
       if (isAlreadyReacted) {
         // UNDO: Set reaction count to 0
-        currentArticleReactions[emoji] = 0;
+        newReactionsForArticle = {...currentArticleReactions, [emoji]: 0 };
 
         // Remove from reactedArticles list
         setReactedArticles(prev => {
@@ -98,10 +100,7 @@ const Layout: React.FC = () => {
 
       } else {
         // Set all others to 0 and this one to 1
-        Object.keys(currentArticleReactions).forEach(key => {
-          currentArticleReactions[key] = 0;
-        });
-        currentArticleReactions[emoji] = 1;
+        newReactionsForArticle = { [emoji]: 1 }
 
         // Add to reactedArticles list
         setReactedArticles(prev => ({
@@ -109,7 +108,11 @@ const Layout: React.FC = () => {
           [articleUrl]: article // Adds or updates the article
         }));
       }
-      return newReactions;
+      // Return the new top-level state
+      return {
+        ...prevReactions,
+        [articleUrl]: newReactionsForArticle,
+      }
     });
   };
   
