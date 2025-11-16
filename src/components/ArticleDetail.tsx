@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { type Article } from '../types';
 import { CloseIcon } from './icons/Icons';
 
