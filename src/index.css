@@ -17,3 +17,8 @@
   --paper: var(--dark-paper);
   --accent: var(--dark-accent);
 }
+
+/* Disabled by default to avoid flash on load */
+html.theme-transition * {
+  transition: color 250ms ease, background-color 250ms ease, border-color 250ms ease;
+}

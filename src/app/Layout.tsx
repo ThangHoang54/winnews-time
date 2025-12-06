@@ -33,13 +33,27 @@ const Layout: React.FC = () => {
   const [reactions, setReactions] = useLocalStorage<Reactions>('reactions', {});
   const [reactedArticles, setReactedArticles] = useLocalStorage<Record<string, Article>>('reactedArticles', {});
 
+  function enableThemeTransition() {
+    document.documentElement.classList.add("theme-transition");
+    window.setTimeout(() => {
+      document.documentElement.classList.remove("theme-transition");
+    }, 300); 
+  };
+
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+    const applyTheme = () => {
+      document.documentElement.classList.toggle("dark", theme === "dark");
+    };
+
+    if (document.startViewTransition) {
+      document.startViewTransition(applyTheme);
     } else {
-      document.documentElement.classList.remove('dark');
+      enableThemeTransition();
+      applyTheme();
     }
   }, [theme]);
+
+
 
   // Lock background scroll when ArticleDetail modal is open
   useEffect(() => {
