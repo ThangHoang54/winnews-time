@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">The WinNews Time</h1>
 
-Welcome to The WinNews Time, a modern digital newspaper experience with a nostalgic, classic aesthetic inspired by iconic print publications like The New York Times. This web application delivers the latest news headlines and allows for deep-dive searches, all wrapped in a beautifully designed, user-friendly interface.
+Welcome to The WinNews Time, modern smart newspaper agent web page, styled like a classic physical newspaper like The New York Times. This web application delivers the latest news headlines and allows for deep-dive searches, all wrapped in a beautifully designed, user-friendly interface.
 
 <img src="./public/screenshoot.png">
 
