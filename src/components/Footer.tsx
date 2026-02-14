@@ -24,6 +24,7 @@ const translations = {
     en: 'Stay connected for daily insights and curated perspectives.',
     fr: 'Restez connectés pour des perspectives et des analyses quotidiennes.',
   },
+  author: {en: "Developed by Hoang Minh Thang", fr: "Réalisé par Hoang Minh Thang" },
   copyright: { en: 'All Rights Reserved.', fr: 'Tous Droits Réservés.' },
   poweredBy: { en: 'Powered by News API', fr: 'Propulsé par News API' },
 };
@@ -112,9 +113,12 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-ink/10 dark:border-dark-ink/10 mt-12 pt-6 text-center text-sm text-ink/60 dark:text-dark-ink/60 px-6">
+      <div className="border-t border-ink/10 dark:border-dark-ink/10 mt-12 pt-6 text-sm text-ink/60 dark:text-dark-ink/60 px-6 text-center">
+        <p className='mb-1'>
+          {translations.author[language]}
+        </p>
         <p>
-          &copy; {new Date().getFullYear()} The WinNews Time. {translations.copyright[language]}
+          &copy; 2025 - {new Date().getFullYear()} The WinNews Time. {translations.copyright[language]}
         </p>
         <p className="mt-1">{translations.poweredBy[language]}</p>
       </div>
