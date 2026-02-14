@@ -9,7 +9,6 @@ export default defineConfig({
     proxy: {
       // Proxies any request starting with /api to your serverless functions
       '/api': {
-        // This is the default port for `vercel dev`
         target: 'http://localhost:3000', 
         changeOrigin: true,
       }
