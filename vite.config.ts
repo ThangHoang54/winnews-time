@@ -7,17 +7,29 @@ export default defineConfig({
     port: 8080,
     host: "0.0.0.0",
     proxy: {
-      // Proxies any request starting with /api to your serverless functions
       '/api': {
         target: 'http://localhost:3000', 
         changeOrigin: true,
       }
     }
   },
+  build: {
+    rollupOptions: {
+      external: ['next/navigation'], 
+    },
+  },
+  optimizeDeps: {
+    exclude: ['@vercel/analytics', '@vercel/analytics/react'],
+  },
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "."),
+        "@": path.resolve(__dirname, "./src"),
+        "app": path.resolve(__dirname, "./src/app"),
+        "pages": path.resolve(__dirname, "./src/app/pages"),
+        "components": path.resolve(__dirname, "./src/components"),
+        "hooks": path.resolve(__dirname, "./src/hooks"),
+        "services": path.resolve(__dirname, "./src/services")
     },
   },
 });

@@ -48,7 +48,6 @@ export async function fetchNewsFromApi<T>(
       const response = await fetch(url); 
 
       if (!response.ok) {
-        // ... (your identical error handling logic) ...
         let errorMessage = `HTTP error! status: ${response.status}`;
         let errorCode: string | undefined;
         try {

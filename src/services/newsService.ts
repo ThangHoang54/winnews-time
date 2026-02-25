@@ -1,4 +1,4 @@
- import type { NewsApiResponse, Category } from "../types";
+ import type { NewsApiResponse, Category } from "@/types";
 
  // This is your OWN backend, not NewsAPI
  const API_BASE_URL = "/api";

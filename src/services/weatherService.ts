@@ -1,4 +1,4 @@
-import type { WeatherApiResponse } from '../types';
+import type { WeatherApiResponse } from '@/types';
 
 const API_BASE_URL = '/api'; 
  

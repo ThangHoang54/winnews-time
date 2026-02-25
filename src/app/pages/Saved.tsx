@@ -1,8 +1,8 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
-import type { Article } from '../../types';
-import type { AppContextType } from '../Layout';
-import ArticleCard from '../../components/ArticleCard';
+import type { Article } from '@/./types';
+import type { AppContextType } from '@app/Layout';
+import ArticleCard from '@components/ArticleCard';
 
 const Saved: React.FC = () => {
   // Get shared state and handlers from the Layout

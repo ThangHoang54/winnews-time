@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { getTopHeadlines, searchArticles } from '../../services/newsService';
-import type { Article, Category } from '../../types';
-import type { AppContextType } from '../Layout';
-import SearchBar from '../../components/SearchBar';
-import FilterBar from '../../components/FilterBar';
-import ArticleCard from '../../components/ArticleCard';
-import SkeletonCard from '../../components/SkeletonCard';
+import { getTopHeadlines, searchArticles } from '@services/newsService';
+import type { Article, Category } from '@/./types';
+import type { AppContextType } from '@app/Layout';
+import SearchBar from '@components/SearchBar';
+import FilterBar from '@components/FilterBar';
+import ArticleCard from '@components/ArticleCard';
+import SkeletonCard from '@components/SkeletonCard';
 
 const Home: React.FC = () => {
-  // Get shared state and handlers from the Layout
   const {
     language,
     handleSaveToggle,

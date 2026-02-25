@@ -4,13 +4,12 @@ const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   
-  // 1. Get the key *inside* the handler
+  // Get the key *inside* the handler
   const API_KEY = process.env.OPENWEATHER_API_KEY; 
 
-  // 2. Add a type guard that stops execution
+  // Add a type guard that stops execution
   if (!API_KEY) {
     console.error("Server Error: OPENWEATHER_API_KEY is not configured.");
-    // This 'return' ensures the code below only runs if API_KEY is a string
     return res.status(500).json({ message: 'Server configuration error' });
   }
 
@@ -26,7 +25,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       lon: lon as string,
       units: 'metric',
       lang: lang as string,
-      appid: API_KEY, // <-- TypeScript is now happy, it knows API_KEY is a string
+      appid: API_KEY, 
     });
 
     const url = `${API_BASE_URL}/weather?${queryParams.toString()}`;

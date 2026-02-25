@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import type { Article, Reactions } from '../types';
-import useLocalStorage from '../hooks/useLocalStorage';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ArticleDetail from '../components/ArticleDetail';
+import type { Article, Reactions } from '@/types';
+import useLocalStorage from '@hooks/useLocalStorage';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
+import ArticleDetail from '@components/ArticleDetail';
 
 type Theme = 'light' | 'dark';
 type Language = 'en' | 'fr';

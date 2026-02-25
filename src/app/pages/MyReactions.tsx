@@ -1,14 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import type { AppContextType } from '../Layout';
-import type { Article } from '../../types';
-import ArticleCard from '../../components/ArticleCard';
-import ReactionFilterBar from '../../components/ReactionFilterBar';
-import ReactionSortDropdown, { type SortOptionKey } from '../../components/ReactionSortDropdown';
+import type { AppContextType } from '@app/Layout';
+import type { Article } from '@/./types';
+import ArticleCard from '@components/ArticleCard';
+import ReactionFilterBar from '@components/ReactionFilterBar';
+import ReactionSortDropdown, { type SortOptionKey } from '@components/ReactionSortDropdown';
 import { ThumbsUp, Heart, Laugh, Meh, Frown, Angry } from 'lucide-react';
-import { SearchIcon } from '../../components/icons/Icons';
+import { SearchIcon } from '@components/icons/Icons';
 
-// This map now holds all info, including labels, and is our single source of truth
+// This map now holds all info, including labels
 const REACTION_MAP = [
   { key: '👍', Icon: ThumbsUp, color: 'text-blue-500', en: 'Liked', fr: 'Aimé' },
   { key: '❤️', Icon: Heart, color: 'text-red-500', en: 'Loved', fr: 'Adoré' },

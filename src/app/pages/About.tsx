@@ -1,6 +1,6 @@
 import React from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
-import type { AppContextType } from '../Layout';
+import type { AppContextType } from '@app/Layout';
 import { Newspaper, Sparkles, ShieldCheck } from 'lucide-react';
 
 // --- Translations ---

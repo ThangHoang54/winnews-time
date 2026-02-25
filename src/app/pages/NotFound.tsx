@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useOutletContext } from 'react-router-dom';
-import type { AppContextType } from '../Layout'; 
+import type { AppContextType } from '@app/Layout'; 
 
 // Translations for the component
 const translations = {

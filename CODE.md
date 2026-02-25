@@ -3,7 +3,7 @@
 ## Step 3. **Modify code for `newsService.ts` and `weatherService` (run local purpose)**
    ### `newsService.ts`
    ```ts
-    import type { NewsApiResponse, Category } from "../types";
+    import type { NewsApiResponse, Category } from "@/types";
 
     const API_BASE_URL = "https://newsapi.org/v2";
     const API_KEYS_STRING = import.meta.env.VITE_NEWS_API_KEY;
@@ -85,7 +85,7 @@
         } catch (error) {
           console.warn(`Failed fetching with API key #${i + 1}:`, error);
           lastError = error instanceof Error ? error : new Error(String(error));
-          continue; // Try next key
+          continue; 
         }
       }
     
@@ -134,7 +134,7 @@
 
    ### `weatherService.ts`
    ```ts
-    import type { WeatherApiResponse } from '../types';
+    import type { WeatherApiResponse } from '@/types';
 
     const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
     const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY
@@ -167,15 +167,15 @@
 ## Step 6. **Return previous code for `newsService.ts` and `weatherService` (deploy purpose)**
    ### `newsService.ts`
    ```ts
-    import type { NewsApiResponse, Category } from "../types";
+    import type { NewsApiResponse, Category } from "@/types";
 
-    // This is your OWN backend, not NewsAPI
+    // Tour OWN backend, not NewsAPI
     const API_BASE_URL = "/api";
     
     // Define allowed languages
     export type Language = "en" | "fr";
     
-    // A simple, new fetcher for your own API
+    // A new fetcher for your own API
     async function fetchNews<T>(endpoint: string, params: Record<string, string>):Promise<T> {
       const queryParams = new URLSearchParams(params);
       const url = `${API_BASE_URL}/${endpoint}?${queryParams.toString()}`;
@@ -183,7 +183,6 @@
       const response = await fetch(url);
       
       if (!response.ok) {
-        // Get the error message from our own server
         const errorData = await response.json();
         throw new Error(errorData.message || 'Failed to fetch news');
       }
@@ -191,7 +190,7 @@
       return (await response.json()) as T;
     }
     
-    // Fetch top headlines from YOUR proxy
+    // Fetch top headlines from your proxy
     export const getTopHeadlines = async (
       language: Language,
       category?: Category
@@ -205,7 +204,7 @@
       return fetchNews<NewsApiResponse>("headlines", requestParams);
     };
     
-    // Search for news articles from YOUR proxy
+    // Search for news articles from your proxy
     export const searchArticles = async (
       query: string,
       language: Language
@@ -220,7 +219,7 @@
    
    ### `weatherService.ts`
    ```ts
-   import type { WeatherApiResponse } from '../types';
+   import type { WeatherApiResponse } from '@/types';
 
    const API_BASE_URL = '/api'; 
     

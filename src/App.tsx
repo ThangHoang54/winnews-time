@@ -1,17 +1,17 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import UseScrollToTop  from './hooks/useScrollToTop';
-import Layout from './app/Layout';
+import UseScrollToTop  from '@hooks/useScrollToTop';
+import Layout from '@app/Layout';
 import { Analytics } from '@vercel/analytics/next';
 
 // Lazy load the page component
-const Home = lazy(() => import('./app/pages/Home'));
-const Saved = lazy(() => import('./app/pages/Saved'));
-const MyReactions = lazy(() => import('./app/pages/MyReactions'))
-const About = lazy(() => import('./app/pages/About'));
-const Privacy = lazy(() => import('./app/pages/Privacy'));
-const Terms = lazy(() => import('./app/pages/Terms'));
-const NotFound = lazy(() => import('./app/pages/NotFound'));
+const Home = lazy(() => import('@pages/Home'));
+const Saved = lazy(() => import('@pages/Saved'));
+const MyReactions = lazy(() => import('@pages/MyReactions'))
+const About = lazy(() => import('@pages/About'));
+const Privacy = lazy(() => import('@pages/Privacy'));
+const Terms = lazy(() => import('@pages/Terms'));
+const NotFound = lazy(() => import('@pages/NotFound'));
 
 const App: React.FC = () => {
   return (
