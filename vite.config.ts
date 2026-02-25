@@ -22,11 +22,11 @@ export default defineConfig({
   resolve: {
     alias: {
         "@": path.resolve(__dirname, "./src"),
-        "app": path.resolve(__dirname, "./src/app"),
-        "pages": path.resolve(__dirname, "./src/app/pages"),
-        "components": path.resolve(__dirname, "./src/components"),
-        "hooks": path.resolve(__dirname, "./src/hooks"),
-        "services": path.resolve(__dirname, "./src/services")
+        "@app": path.resolve(__dirname, "./src/app"),
+        "@pages": path.resolve(__dirname, "./src/app/pages"),
+        "@components": path.resolve(__dirname, "./src/components"),
+        "@hooks": path.resolve(__dirname, "./src/hooks"),
+        "@services": path.resolve(__dirname, "./src/services")
     },
   },
 });
