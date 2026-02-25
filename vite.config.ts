@@ -15,11 +15,8 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['next/navigation'], 
+      external: ['next/navigation', 'next/navigation.js'],
     },
-  },
-  optimizeDeps: {
-    exclude: ['@vercel/analytics', '@vercel/analytics/react'],
   },
   plugins: [react()],
   resolve: {

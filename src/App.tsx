@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UseScrollToTop  from '@hooks/useScrollToTop';
 import Layout from '@app/Layout';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 // Lazy load the page component
 const Home = lazy(() => import('@pages/Home'));
