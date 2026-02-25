@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UseScrollToTop  from './hooks/useScrollToTop';
 import Layout from './app/Layout';
+import { Analytics } from '@vercel/analytics/next';
 
 // Lazy load the page component
 const Home = lazy(() => import('./app/pages/Home'));
@@ -22,18 +23,21 @@ const App: React.FC = () => {
         <div className="min-h-screen bg-paper dark:bg-dark-paper flex items-center justify-center">
           <p className="text-lg text-ink dark:text-dark-ink">Loading...</p>
         </div>
-      }></Suspense>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} /> {/* Use 'index' for the v6 index route */}
-          <Route path="saved" element={<Saved />} />
-          <Route path="reactions" element={<MyReactions />} />
-          <Route path="about" element={<About />} />
-          <Route path="privacy" element={<Privacy />} />
-          <Route path="terms" element={<Terms />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+      }>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} /> {/* Use 'index' for the v6 index route */}
+            <Route path="saved" element={<Saved />} />
+            <Route path="reactions" element={<MyReactions />} />
+            <Route path="about" element={<About />} />
+            <Route path="privacy" element={<Privacy />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+
+      <Analytics />
     </BrowserRouter>
   );
 };
